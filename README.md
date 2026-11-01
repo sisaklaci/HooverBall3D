@@ -52,3 +52,8 @@ A pálya szélei, valamint a hooverball és mindkét jármű is visszapattannak 
 ## Készítette
 
 [helmetsoft.com](https://helmetsoft.com) – ez a játékon belül a főmenü jobb alsó sarkában is fel van tüntetve.
+
+## Licenc
+
+A projekt a [PolyForm Noncommercial 1.0.0](LICENSE) licenc alatt áll: szabadon
+nézhető, módosítható és terjeszthető, de csak nem kereskedelmi célra.
