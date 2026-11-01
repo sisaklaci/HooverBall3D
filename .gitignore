@@ -1,0 +1,10 @@
+.gradle/
+build/
+*/build/
+local.properties
+.idea/
+*.iml
+.vscode/
+desktop/hs_err_pid*.log
+
+.databricks

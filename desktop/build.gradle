@@ -1,0 +1,26 @@
+apply plugin: 'application'
+
+mainClassName = 'com.sisak.hooverball.desktop.DesktopLauncher'
+
+dependencies {
+    implementation project(':core')
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+}
+
+run {
+    // Needed so LWJGL3 can open a native window when launched via Gradle.
+    if (org.gradle.internal.os.OperatingSystem.current().isMacOsX()) {
+        jvmArgs += '-XstartOnFirstThread'
+    }
+}
+
+// Gathers the project jar plus every runtime dependency jar into one flat
+// folder so a native packager (jpackage) can turn it into a standalone exe.
+task jpackageInput(type: Copy) {
+    dependsOn jar
+    from configurations.runtimeClasspath
+    from jar.archiveFile
+    into "$buildDir/jpackage-input"
+}

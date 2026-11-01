@@ -1,0 +1,19 @@
+# This is a Declarative Automation Bundle definition for HooverBall3D.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: HooverBall3D
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-5678659344564033.13.azuredatabricks.net
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: https://adb-5678659344564033.13.azuredatabricks.net

@@ -1,0 +1,16 @@
+rootProject.name = 'HooverBall3D'
+
+include 'core', 'desktop'
+
+// The Android module is only wired in once an Android SDK is configured on this
+// machine (either via local.properties or the ANDROID_HOME/ANDROID_SDK_ROOT env
+// vars). This lets `core`/`desktop` build and run on any machine with just a JDK,
+// while the Android module still builds normally once you open the project in
+// Android Studio after creating local.properties (see README.md).
+def hasAndroidSdk = file('local.properties').exists() ||
+        System.getenv('ANDROID_HOME') != null ||
+        System.getenv('ANDROID_SDK_ROOT') != null
+
+if (hasAndroidSdk) {
+    include 'android'
+}
